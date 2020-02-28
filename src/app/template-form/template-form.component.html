@@ -1,0 +1,39 @@
+<form #f="ngForm" (ngSubmit)="cadastrar(f)">
+  <div class="row">
+    <div class="form-group col-4">
+      <label for="nome">Nome:</label>
+      <input type="text" class="form-control" name="nome" id="nome"
+      aria-describedby="textHelp" placeholder="Digite o nome do item"
+      [(ngModel)]="objeto.nome" required #nome="ngModel">
+      <div class="error" *ngIf="!nome.valid && nome.touched">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        O campo é obrigatório
+      </div>
+      <small id="textHelp" class="form-text text-muted">info referent a info1</small>
+    </div>
+    <div class="form-group col-4">
+      <label for="preco">Preço:</label>
+      <input type="number" class="form-control" name="preco" id="preco"
+      aria-describedby="textHelp" placeholder="Digite o preco do item"
+      [(ngModel)]="objeto.preco" required #preco="ngModel">
+      <div class="error" *ngIf="!preco.valid && preco.touched">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        O campo é obrigatório
+      </div>
+      <small id="textHelp" class="form-text text-muted">info referent a info1</small>
+    </div>
+    <div class="form-group col-4">
+      <label for="peso">Peso:</label>
+      <input type="number" class="form-control" name="peso" id="peso"
+      aria-describedby="textHelp" placeholder="Digite o peso do item"
+      [(ngModel)]="objeto.peso" required #peso="ngModel">
+      <div class="error" *ngIf="!peso.valid && peso.touched">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        O campo é obrigatório
+      </div>
+      <small id="textHelp" class="form-text text-muted">info referent a info1</small>
+    </div>
+  </div>
+  <button type="submit" class="rpgui-button" [disabled]="!f.valid">Enviar</button>
+  <button class="btn btn-outline-danger" (click)="getItem()" type="button">Limpar</button>
+</form>

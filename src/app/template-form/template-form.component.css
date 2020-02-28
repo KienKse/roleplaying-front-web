@@ -1,0 +1,54 @@
+.ng-invalid.ng-touched:not(form) {
+  border: 1px solid red;
+}
+
+.error {
+  opacity: 70%;
+  margin: 2px;
+  padding: 5px;
+  border-radius: 3px;
+  color: #FFF;
+  background-color: red;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.rpgui-button {
+  font-family: 'Press Start 2P', cursive;
+  /* hide button default stuff */
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  overflow: hidden;
+  outline: none;
+  /* background */
+  background: url("https://github.com/RonenNess/RPGUI/blob/master/dist/img/button.png?raw=true") no-repeat no-repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+  background-size: 100% 100%;
+  /* font size */
+  font-size: 1.1em;
+  color: white;
+  /* default size and display */
+  max-width: 100%;
+  min-width: 140px;
+  height: 60px;
+  display: inline-block;
+  /* padding */
+  padding-left: 35px;
+  padding-right: 35px;
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "nome":"Poção de Teste",
+    "preco": 10,
+    "peso": 0.3
+  },
+  {
+    "nome":"Arma de Teste",
+    "preco": 240,
+    "peso": 4.5
+  }
+]
