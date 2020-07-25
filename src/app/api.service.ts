@@ -9,13 +9,13 @@ const localUrl = 'assets/data/item.json';
   providedIn: 'root'
 })
 export class ApiService {
-
+/*
   constructor(private http: HttpClient) { }
 
   getItem() {
     return this.http.get(localUrl);
   }
-
+*/
   //TODO
   // https://www.djamware.com/post/5d8d7fc10daa6c77eed3b2f2/angular-8-tutorial-rest-api-and-httpclient-examples
   // OBJECT ITEM +

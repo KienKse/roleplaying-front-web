@@ -1,1 +1,72 @@
-<p>data-form works!</p>
+<!-- <form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()"> -->
+<form class="form-horizontal" [formGroup]="formulario">
+  <div class="container">
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <label>Nome</label>
+      </div>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Nome">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <label>Tempo Execução</label>
+      </div>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="tempoExecucao" id="tempoExecucao" placeholder="Tempo em turnos">
+        <p class="smallText">Caso não tenha certeza pode deixar em branco</p>
+
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <label>Alcance</label>
+      </div>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="alcance" id="alcance" placeholder="Alcance em metros">
+      </div>
+   </div>
+
+   <div class="form-group row">
+    <div class="col-sm-2">
+      <label>Duração</label>
+    </div>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" formControlName="duracao" id="duracao" placeholder="Duração em turnos">
+       <p class="smallText">Caso não tenha certeza pode deixar em branco</p>
+
+    </div>
+   </div>
+
+   <div class="form-group row">
+    <div class="col-sm-2">
+      <label>Custo</label>
+    </div>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" formControlName="custo" id="custo" placeholder="Custo em Mana ou Stamina">
+       <p class="smallText">Caso não tenha certeza pode deixar em branco</p>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-2">
+      <label>Descrição</label>
+    </div>
+    <div class="col-sm-6">
+      <textarea class="form-control" class="form-control" formControlName="descricao" id="descricao" placeholder="Descrição"></textarea>
+       <p class="smallText">Descreva a habilidade de forma clara e especificando toda sua usabilidade</p>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-12">
+      <button type="submit" class="btn- btn-primary">Submeter</button>
+    </div>
+  </div>
+
+  </div>
+</form>

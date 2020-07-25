@@ -23,10 +23,14 @@ export class TemplateFormComponent implements OnInit {
     console.log(f)
     console.log(f.value)
     console.log(this.objeto)
+    if(f.valid) {
+      console.log('submit')
+    }
     // /api/item/add
   }
 
   getItem() {
+    /*
     this.api.getItem()
       .subscribe(data => {
         for (const d of (data as any)) {
@@ -38,6 +42,7 @@ export class TemplateFormComponent implements OnInit {
         }
         console.log(this.item);
       });
+    */
   }
 
   // constructor() { }

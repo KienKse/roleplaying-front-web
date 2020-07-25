@@ -1,26 +1,24 @@
-<nav class="navbar navbar-expand-md" style="background-color: #e3f2fd;">
+ <nav class="navbar navbar-expand-md" style="background-color: #e3f2fd;">
+  <div style="margin-left: 3vh;">
+    <img src="https://thumbs.gfycat.com/AnotherFlamboyantCobra-size_restricted.gif"
+     width="auto" height="70px" class="d-inline-block align-top" alt="Don't click me!">
+  </div>
   <ul class="nav navbar-nav">
     <li>
-      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" style="margin-right: 10vh;">
-        <img src="./assets/dnd.svg" width="70px" height="50px" class="d-inline-block align-top" alt="">
+      <div class=" col-sm-4" width="180px" height="50px">
+        <a [routerLink]="['/dataForm']" routerLinkActive="router-link-active" class="navbar-brand" href="#">
+          <img src="./assets/skills.svg" class="imgMenu" alt="Skill">
+          <p class="textMenu">Skill</p>
+        </a>
       </div>
-    <li>
-      <a [routerLink]="['/dataForm']" routerLinkActive="router-link-active" class="navbar-brand" href="#">
-        <img src="./assets/skills.svg" width="30px" height="30px" class="d-inline-block align-top" alt="">
-        Habilidades
-      </a>
     </li>
     <li>
-      <a [routerLink]="['/templateForm']" routerLinkActive="router-link-active" class="navbar-brand" href="#">
-        <img src="./assets/chest-armor.svg" width="30px" height="30px" class="d-inline-block align-top" alt="">
-        Itens
-      </a>
-    </li>
-    <li>
-      <a routerLinkActive="router-link-active" class="navbar-brand" href="#">
-        <img src="./assets/orc-head.svg" width="30px" height="30px" class="d-inline-block align-top" alt="">
-        Monstros
-      </a>
+      <div class=" col-sm-4">
+        <a [routerLink]="['/templateForm']" routerLinkActive="router-link-active" class="navbar-brand" href="#">
+          <img src="./assets/chest-armor.svg" class="imgMenu" alt="Itens">
+          <p class="textMenu">Itens</p>
+        </a>
+      </div>
     </li>
   </ul>
 </nav>
