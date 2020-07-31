@@ -1,6 +1,5 @@
-//import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-data-form',
@@ -9,45 +8,34 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class DataFormComponent implements OnInit {
 
-  formulario: FormGroup;
+  constructor(private http: HttpClient) { }
 
-  constructor(
-    private formBuilder: FormBuilder
-    // private http: HttpClient
-    ) { }
+    objeto: any = {
+      nome: null,
+      tempoExecucao: null,
+      alcance: null,
+      duracao: null,
+      custo: null,
+      descricao: null
+    }
 
-  ngOnInit() {
-// Primeira forma
-/*
-    this.formulario = new FormGroup({
-      nome: new FormControl(null),
-      tempoExecucao: new FormControl(null),
-      alcance: new FormControl(null),
-      efeito: new FormControl(null),
-      duracao: new FormControl(null),
-      custo: new FormControl(null),
-      descricao: new FormControl(null)
-    });
-*/
+  ngOnInit() {}
 
-// Segunda forma
-    this.formulario = this.formBuilder.group({
-      nome: [null],
-      tempoExecucao: [null],
-      alcance: [null],
-      duracao: [null],
-      custo: [null],
-      descricao: [null]
-    });
+    onSubmit(f) {
+    const url = 'http://localhost:4200/api/habilidade/add';
+
+    //method teste
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("POST", url, true);
+
+      xmlhttp.setRequestHeader("Content-Type", "application/json");
+
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+          // Requisição finalizada. Faça o processamento aqui.
+          console.log(this.response);
+        }
+      }
+      xmlhttp.send(JSON.stringify(this.objeto));
   }
-
-  onSubmit() {
-    /*
-    console.log(this.formulario.value);
-    this.http.post('localhost:8081/api/habilidade/add',
-                  JSON.stringify(this.formulario.value))
-      .subscribe(dados => console.log(dados));
-      */
-  }
-
 }

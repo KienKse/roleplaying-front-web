@@ -23,3 +23,13 @@ img:hover{
   height: 50px;
   margin-left: 2vh;
 }
+
+/* DEFAULT */
+
+.smallText {
+  font-size: 1em;
+}
+
+.container {
+  padding: 2vh;
+}
