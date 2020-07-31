@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-data-form',
@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataFormComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private service: ApiService
+    ) { }
 
     objeto: any = {
       nome: null,
@@ -21,21 +23,20 @@ export class DataFormComponent implements OnInit {
 
   ngOnInit() {}
 
-    onSubmit(f) {
-    const url = 'http://localhost:4200/api/habilidade/add';
 
-    //method teste
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("POST", url, true);
 
-      xmlhttp.setRequestHeader("Content-Type", "application/json");
-
-      xmlhttp.onreadystatechange = function () {
-        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-          // Requisição finalizada. Faça o processamento aqui.
-          console.log(this.response);
-        }
-      }
-      xmlhttp.send(JSON.stringify(this.objeto));
+  onSubmit(f) {
+    this.service.enviar(this.objeto);
+    location.reload();
   }
+
+  clearFields() {
+    this.objeto.nome = "",
+    this.objeto.tempoExecucao = "",
+    this.objeto.alcance = "",
+    this.objeto.duracao = "",
+    this.objeto.custo = "",
+    this.objeto.descricao = "";
+    }
+
 }

@@ -10,4 +10,22 @@ const localUrl = 'assets/data/item.json';
 })
 export class ApiService {
 
+  enviar(obj) {
+    const url = 'http://localhost:4200/api/habilidade/add';
+
+    //method teste
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("POST", url, true);
+
+      xmlhttp.setRequestHeader("Content-Type", "application/json");
+
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+          // Requisição finalizada. Faça o processamento aqui.
+          console.log(this.response);
+        }
+      }
+      xmlhttp.send(JSON.stringify(obj));
+  }
+
 }

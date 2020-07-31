@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
     // HttpClient
   ],
   providers: [],
