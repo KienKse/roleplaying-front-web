@@ -9,31 +9,61 @@
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
         O campo é obrigatório
       </div>
-      <small id="textHelp" class="form-text text-muted">info referent a info1</small>
+      <small id="textHelp" class="form-text text-muted">Caso já tenha um nome igual na lista de itens o registro não será cadastrado!</small>
     </div>
     <div class="form-group col-4">
       <label for="preco">Preço:</label>
       <input type="number" class="form-control" name="preco" id="preco"
       aria-describedby="textHelp" placeholder="Digite o preco do item"
-      [(ngModel)]="objeto.preco" required #preco="ngModel">
-      <div class="error" *ngIf="!preco.valid && preco.touched">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        O campo é obrigatório
-      </div>
-      <small id="textHelp" class="form-text text-muted">info referent a info1</small>
+      [(ngModel)]="objeto.preco" #preco="ngModel">
+      <small id="textHelp" class="form-text text-muted">Caso não tenha certeza pode deixar em branco</small>
     </div>
     <div class="form-group col-4">
       <label for="peso">Peso:</label>
       <input type="number" class="form-control" name="peso" id="peso"
       aria-describedby="textHelp" placeholder="Digite o peso do item"
-      [(ngModel)]="objeto.peso" required #peso="ngModel">
-      <div class="error" *ngIf="!peso.valid && peso.touched">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        O campo é obrigatório
-      </div>
-      <small id="textHelp" class="form-text text-muted">info referent a info1</small>
+      [(ngModel)]="objeto.peso" #peso="ngModel">
+      <small id="textHelp" class="form-text text-muted">Caso não tenha certeza pode deixar em branco</small>
+    </div>
+    <div class="form-group col-4">
+      <label for="peso">Lore/História:</label>
+      <textarea type="text" class="form-control" name="lore" id="lore" placeholder="Digite a lore do item"
+      [(ngModel)]="objeto.lore" #descricao="ngModel"></textarea>
+      <small id="textHelp" class="form-text text-muted">Caso não tenha não precisa preencher</small>
     </div>
   </div>
-  <button type="submit" class="rpgui-button" [disabled]="!f.valid">Enviar</button>
-  <button class="btn btn-outline-danger" (click)="getItem()" type="button">Limpar</button>
+  <!-- <button type="submit" class="rpgui-button" [disabled]="!f.valid">Enviar</button> -->
+  <button type="submit" [disabled]="!f.valid">Enviar</button>
+  <!-- <button class="btn btn-outline-danger" (click)="getItem()" type="button">Limpar</button> -->
 </form>
+
+<div class="container">
+  <div class="row"style="width: 200px;">
+    <img src="https://i.dlpng.com/static/png/4638284-beauty-lies-in-the-eye-of-the-beholder-by-looniecoon-on-deviantart-png-beauty-in-the-eye-of-the-beholder-894_894_preview.png"
+    style="width: 60px; margin: 5px;" />
+  </div>
+
+  <div *ngIf="this.itens.length > 0" class="card list-car">
+    <h5 class="card-header">Lista de Itens, Já cadastrados no sistema</h5>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Peso</th>
+              <th scope="col">Lore / História</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of itens">
+              <td>{{item.nome}}</td>
+              <td>{{item.preco  == undefined ? 0 : item.preco}} PO</td>
+              <td>{{item.peso == undefined ? 0 : item.preco}} Kg</td>
+              <td>{{item.lore}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>

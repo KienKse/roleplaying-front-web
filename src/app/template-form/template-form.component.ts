@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'src/item';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -13,14 +14,13 @@ export class TemplateFormComponent implements OnInit {
   objeto: any = {
     nome: null,
     preco: null,
-    peso: null
+    peso: null,
+    lore: null,
   }
 
-  item: any = [];
+  itens: any = [];
 
   cadastrar(f) {
-    console.log(f);
-    console.log(f.value);
     console.log(this.objeto);
     if(f.valid) {
       console.log('submit');
@@ -29,7 +29,14 @@ export class TemplateFormComponent implements OnInit {
     }
   }
 
+  getItem() {
+    this.api.getItens().subscribe((itens: Item[]) => {
+      this.itens = itens;
+    });
+   }
+
   ngOnInit() {
+    this.getItem();
   }
 
 }
