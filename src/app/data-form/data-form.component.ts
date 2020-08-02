@@ -8,9 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class DataFormComponent implements OnInit {
 
-  constructor(
-    private service: ApiService
-    ) { }
+  constructor(private service: ApiService) { }
 
     objeto: any = {
       nome: null,
@@ -26,7 +24,7 @@ export class DataFormComponent implements OnInit {
 
 
   onSubmit(f) {
-    this.service.enviar(this.objeto);
+    this.service.enviarHabilidade(this.objeto);
     location.reload();
   }
 
@@ -37,6 +35,6 @@ export class DataFormComponent implements OnInit {
     this.objeto.duracao = "",
     this.objeto.custo = "",
     this.objeto.descricao = "";
-    }
+  }
 
 }

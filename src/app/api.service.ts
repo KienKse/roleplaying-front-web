@@ -5,13 +5,24 @@ const localUrl = 'assets/data/item.json';
 // const localUrl = 'https://gitlab.com/KienKse/sandbox/-/raw/master/monstro.json';
 // /home/icarosilva/Documentos/workspace/roleplaying-front/src/data/item.json
 
+const BASE_URL = 'http://localhost:4200/api/'
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  enviar(obj) {
-    const url = 'http://localhost:4200/api/habilidade/add';
+
+  enviarHabilidade(habilidade) {
+    this.enviar(habilidade, 'habilidade/add');
+  }
+
+  enviarItem(item) {
+    this.enviar(item, 'item/add');
+  }
+
+  enviar(obj, compĺement) {
+    var url =  BASE_URL + compĺement;
 
     //method teste
       var xmlhttp = new XMLHttpRequest();
