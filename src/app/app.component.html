@@ -1,9 +1,25 @@
  <nav class="navbar navbar-expand-md" style="background-color: #e3f2fd;">
   <div style="margin-left: 3vh;">
+    <p>
+    </p>
+    <div class="col-sm-6">
+      <span>Usuário: </span><span class="textMenu">{{login}}</span>
+      <br>
+      <small *ngIf="login != undefined">Logout</small>
+    </div>
     <img src="https://thumbs.gfycat.com/AnotherFlamboyantCobra-size_restricted.gif"
-     width="auto" height="70px" class="d-inline-block align-top" alt="Don't click me!">
+    width="auto" height="70px" class="d-inline-block align-top" alt="Don't click me!">
+
   </div>
   <ul class="nav navbar-nav">
+    <!-- <li>
+      <div class=" col-sm-4">
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="navbar-brand" href="#">
+          <img src="./assets/orc-head.svg" class="imgMenu" alt="Itens">
+          <p class="textMenu">Login</p>
+        </a>
+      </div>
+    </li> -->
     <li>
       <div class=" col-sm-4" width="180px" height="50px">
         <a [routerLink]="['/dataForm']" routerLinkActive="router-link-active" class="navbar-brand" href="#">

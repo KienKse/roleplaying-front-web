@@ -8,7 +8,9 @@ import { ApiService } from '../api.service';
 })
 export class DataFormComponent implements OnInit {
 
-  constructor(private service: ApiService) { }
+  constructor(private api: ApiService) {
+    this.api.verifyLogin();
+  }
 
     objeto: any = {
       nome: null,
@@ -16,7 +18,8 @@ export class DataFormComponent implements OnInit {
       alcance: null,
       duracao: null,
       custo: null,
-      descricao: null
+      descricao: null,
+      user: null
     }
 
   ngOnInit() {}
@@ -24,7 +27,8 @@ export class DataFormComponent implements OnInit {
 
 
   onSubmit(f) {
-    this.service.enviarHabilidade(this.objeto);
+    this.objeto.user = localStorage.getItem("login");
+    this.api.enviarHabilidade(this.objeto);
     location.reload();
   }
 

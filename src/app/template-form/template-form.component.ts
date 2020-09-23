@@ -9,19 +9,22 @@ import { ApiService } from '../api.service';
 })
 export class TemplateFormComponent implements OnInit {
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) {
+    this.api.verifyLogin();
+  }
 
   objeto: any = {
     nome: null,
     preco: null,
     peso: null,
     lore: null,
+    user: null,
   }
 
   itens: any = [];
 
   cadastrar(f) {
-    console.log(this.objeto);
+    this.objeto.user = localStorage.getItem("login");
     if(f.valid) {
       console.log('submit');
       this.api.enviarItem(this.objeto);

@@ -12,12 +12,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateFormComponent,
-    DataFormComponent
+    DataFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

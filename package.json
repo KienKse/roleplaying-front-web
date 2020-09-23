@@ -22,8 +22,12 @@
     "bootstrap": "^4.5.0",
     "ngx-bootstrap": "^5.6.1",
     "rxjs": "~6.6.0",
+    "rxjs-compat": "^6.6.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
+  },
+  "resolutions": {
+    "moment": "2.24.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1000.4",
